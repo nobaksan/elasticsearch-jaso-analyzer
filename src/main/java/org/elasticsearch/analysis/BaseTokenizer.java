@@ -6,7 +6,6 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.CharacterUtils;
 import org.apache.lucene.analysis.CharacterUtils.CharacterBuffer;
-import org.elasticsearch.common.logging.*;
 
 import java.io.*;
 
@@ -36,7 +35,6 @@ public abstract class BaseTokenizer extends Tokenizer {
     protected BaseTokenizer(TokenizerOptions options) {
         this.options = options;
 
-        logger = ESLoggerFactory.getLogger(options.getName());
         termAtt = addAttribute(CharTermAttribute.class);
         offsetAtt = addAttribute(OffsetAttribute.class);
 
